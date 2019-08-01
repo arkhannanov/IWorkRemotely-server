@@ -16,10 +16,7 @@ app.get('/', (req, res) => {
   res.send('Работает');
 });
 
-mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely?retryWrites=true&w=majority', {useNewUrlParser: true}).catch(error => handleError(error));
-
-mongoose.connection.on('error', err => {
-  logError(err);
-});
+mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely?retryWrites=true&w=majority',
+  {useNewUrlParser: true}).catch(error => handleError(error));
 
 app.listen(4000);
