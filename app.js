@@ -23,6 +23,6 @@ app.get('/', function(request, response) {
 });
 
 mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely?retryWrites=true&w=majority',
-  {useNewUrlParser: true}).catch(error => handleError(error));
+  {useNewUrlParser: true}).catch(error => console.log(error));
 
 app.listen(3000);
