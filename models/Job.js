@@ -13,6 +13,10 @@ const JobSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  tags : {
+    type: String,
+    required: false
+  },
   headOffice: {
     type: String,
     required: true

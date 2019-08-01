@@ -30,7 +30,7 @@ const upload = multer({
 
 router.get('/', async (req, res) => {
   try {
-    const jobs = await Job.find();
+    const jobs = await Job.find({category : 'Programming'});
     res.json(jobs);
   } catch (err) {
     res.json({message: err});
@@ -43,6 +43,7 @@ router.post('/', upload.single('logo'), async (req, res) => {
     jobTitle: req.body.jobTitle,
     category : req.body.category,
     jobType : req.body.jobType,
+    tags: req.body.tags,
     headOffice : req.body.headOffice,
     region : req.body.region,
     applyLink : req.body.applyLink,
@@ -75,7 +76,7 @@ router.get('/:jobId', async (req, res) => {
 
 router.delete('/:jobId', async (req, res) => {
   try {
-    const removedJob = await Post.remove({_id: req.params.jobId});
+    const removedJob = await Job.remove({_id: req.params.jobId});
     res.json(removedJob);
   } catch (err) {
     res.json({message: err});

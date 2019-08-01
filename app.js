@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const jobsRoute = require('./routes/jobs');
@@ -20,4 +22,4 @@ mongoose.connection.on('error', err => {
   logError(err);
 });
 
-app.listen(3000);
+app.listen(4000);
