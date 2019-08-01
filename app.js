@@ -22,7 +22,7 @@ app.get('/', function(request, response) {
   console.log('App is running, server is listening on port ', app.get('port'));
 });
 
-mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely',
   {useNewUrlParser: true}).catch(error => console.log(error));
 
 app.listen(3000);
