@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 3000));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -22,7 +22,5 @@ app.get('/', function(request, response) {
   console.log('App is running, server is listening on port ', app.get('port'));
 });
 
-mongoose.connect('mongodb+srv://arkhannanov:Victory20@iworkremotely-5l8jr.mongodb.net/IWorkRemotely',
+mongoose.connect('mongodb+srv://user:user@iworkremotely-5l8jr.mongodb.net/IWorkRemotely',
   {useNewUrlParser: true}).catch(error => console.log(error));
-
-app.listen(3000);
